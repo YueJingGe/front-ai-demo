@@ -2,21 +2,21 @@
 
 ## 项目目标
 
-构建一个 AI 对话演示项目，对齐前端工程师 JD 考点：真实 LLM SSE 流式渲染（Markdown + KaTeX + 卡片）、手写虚拟列表消息流、纯函数状态机可单测、IndexedDB 消息持久化。架构为 React 19 前端 + Node 后端（持有 API Key，SSE 转发）。
+构建一个 AI 对话演示项目，对齐项目需求：真实 LLM SSE 流式渲染（Markdown + KaTeX + 卡片）、手写虚拟列表消息流、纯函数状态机可单测、IndexedDB 消息持久化。架构为 React 19 前端 + Node 后端（持有 API Key，SSE 转发）。
 
 ## 技术栈
 
-| 层 | 技术 |
-| --- | --- |
-| 前端 | React 19 + TypeScript strict + Vite 6 + Less |
-| 状态 | useReducer + useSyncExternalStore |
-| Markdown | react-markdown + remark-gfm + remark-math + rehype-katex |
-| 卡片 | 自定义 ` ```card ` JSON 围栏协议 |
-| 虚拟列表 | 手写迷你版（约 150 行纯函数 + 组件） |
-| 持久化 | Dexie（IndexedDB） |
-| 后端 | Node 20+ + Express + tsx |
-| LLM | 阿里云百炼 DashScope OpenAI 兼容模式 |
-| 测试 | vitest + @testing-library/react + jsdom + fake-indexeddb + supertest |
+| 层       | 技术                                                                 |
+| -------- | -------------------------------------------------------------------- |
+| 前端     | React 19 + TypeScript strict + Vite 6 + Less                         |
+| 状态     | useReducer + useSyncExternalStore                                    |
+| Markdown | react-markdown + remark-gfm + remark-math + rehype-katex             |
+| 卡片     | 自定义 ` ```card ` JSON 围栏协议                                     |
+| 虚拟列表 | 手写迷你版（约 150 行纯函数 + 组件）                                 |
+| 持久化   | Dexie（IndexedDB）                                                   |
+| 后端     | Node 20+ + Express + tsx                                             |
+| LLM      | 阿里云百炼 DashScope OpenAI 兼容模式                                 |
+| 测试     | vitest + @testing-library/react + jsdom + fake-indexeddb + supertest |
 
 ## 目录结构
 
@@ -56,16 +56,16 @@ npm run dev   # web :5173 + server :3001
 
 ### Phase 计划
 
-| Phase | 内容 | 验收 |
-| --- | --- | --- |
-| 0 | 脚手架与工程基线 | dev 双端启动、空测试通过 |
-| 1 | 流式状态机（纯函数，测试先行） | reducer 单测全绿 |
-| 2 | Node 后端 + 前端 LLM 接入层 | SSE 解析单测 + supertest |
-| 3 | Dexie 持久层 | repo 单测 + 刷新恢复 |
-| 4 | 渲染层（Markdown + KaTeX + 卡片） | parser 三态单测 |
-| 5 | 虚拟列表 | 几何函数单测 + 5000 条流畅 |
-| 6 | 页面组装 + React 19 输入框 | 完整闭环 |
-| 7 | 打磨与面试材料 | build 全绿 + manualChunks |
+| Phase | 内容                              | 验收                       |
+| ----- | --------------------------------- | -------------------------- |
+| 0     | 脚手架与工程基线                  | dev 双端启动、空测试通过   |
+| 1     | 流式状态机（纯函数，测试先行）    | reducer 单测全绿           |
+| 2     | Node 后端 + 前端 LLM 接入层       | SSE 解析单测 + supertest   |
+| 3     | Dexie 持久层                      | repo 单测 + 刷新恢复       |
+| 4     | 渲染层（Markdown + KaTeX + 卡片） | parser 三态单测            |
+| 5     | 虚拟列表                          | 几何函数单测 + 5000 条流畅 |
+| 6     | 页面组装 + React 19 输入框        | 完整闭环                   |
+| 7     | 打磨与面试材料                    | build 全绿 + manualChunks  |
 
 ### 核心原则
 

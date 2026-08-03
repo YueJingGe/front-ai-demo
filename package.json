@@ -10,10 +10,21 @@
     "dev:web": "npm run dev --workspace=web",
     "dev:server": "tsx watch server/src/index.ts",
     "typecheck": "npm run typecheck --workspaces",
-    "test": "npm run test --workspaces"
+    "test": "npm run test --workspaces",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,less,css,md,json}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.9.6",
     "tsx": "^4.19.3"
   },
   "overrides": {

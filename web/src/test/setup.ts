@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/vitest'
+import '@testing-library/jest-dom/vitest';
 
 class ResizeObserverStub {
   observe() {}
@@ -6,4 +6,4 @@ class ResizeObserverStub {
   disconnect() {}
 }
 
-globalThis.ResizeObserver = ResizeObserverStub
+globalThis.ResizeObserver = ResizeObserverStub;

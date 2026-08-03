@@ -160,3 +160,23 @@
 - SSE 中继的背压与断线：后端必须监听 `req.on('close')` 并 abort 上游，否则用户停止后上游仍在计费出 token。
 - react-markdown v10 / rehype-katex 与 React 19 兼容良好，但 echarts 体积大，务必按需 `echarts/core` 引入并拆 chunk。
 - 流式期间高频 setState：reducer dispatch 每 chunk 一次可接受；markdown 重解析靠 `useDeferredValue` + memo 压住。
+
+## 开发进程
+
+### 恭喜：Phase 0 正式全部完成 ✅
+
+你现在拥有的：
+
+双包结构（web/ + server/）
+
+Vite + React 19 + Less
+
+测试环境（vitest + RTL + fake-indexeddb）
+
+后端 Express 基础（/api/health）
+
+工程化配置（Prettier + Husky + lint-staged）
+
+Cursor 规则（.cursor/rules.md + AGENTS.md）
+
+代码已推送到 GitHub（私有）

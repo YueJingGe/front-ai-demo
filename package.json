@@ -1,0 +1,22 @@
+{
+  "name": "ai-chat-demo",
+  "private": true,
+  "workspaces": [
+    "web",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:web\" \"npm run dev:server\"",
+    "dev:web": "npm run dev --workspace=web",
+    "dev:server": "tsx watch server/src/index.ts",
+    "typecheck": "npm run typecheck --workspaces",
+    "test": "npm run test --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "tsx": "^4.19.3"
+  },
+  "overrides": {
+    "vite": "6.4.3"
+  }
+}
